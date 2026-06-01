@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bchjny5kwi30w"]
+
+[ext_resource type="Script" uid="uid://7kt3w3q0i1lq" path="res://tournament.gd" id="1_a51n3"]
+[ext_resource type="Texture2D" uid="uid://duqe5vaqjxutv" path="res://image soccer/Environment/background.png" id="2_oumtu"]
+
+[node name="Tournament" type="Control" unique_id=903913971]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_a51n3")
+
+[node name="BracketPanel" type="Panel" parent="." unique_id=76304281]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 647.0
+
+[node name="Background" type="Sprite2D" parent="BracketPanel" unique_id=441884858]
+position = Vector2(577, 324.875)
+scale = Vector2(0.6901915, 0.684644)
+texture = ExtResource("2_oumtu")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=2116818758]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 26.0
+offset_right = 665.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 42
+text = "TournaMent"
+
+[node name="StartMatchButton" type="Button" parent="." unique_id=1119362147]
+layout_mode = 0
+offset_left = 1026.0
+offset_top = 575.0
+offset_right = 1103.0
+offset_bottom = 606.0
+text = "경기 시작"
+
+[node name="ChampionPanel" type="Panel" parent="." unique_id=1293906444]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="RelicImage" type="TextureRect" parent="ChampionPanel" unique_id=721383170]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 160.0
+offset_right = 726.0
+offset_bottom = 420.0
+
+[node name="RelicNameLabel" type="Label" parent="ChampionPanel" unique_id=1773917763]
+layout_mode = 0
+offset_top = 430.0
+offset_right = 1152.0
+offset_bottom = 500.0
+horizontal_alignment = 1
+
+[node name="NewTournamentButton" type="Button" parent="ChampionPanel" unique_id=122901991]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 530.0
+offset_right = 676.0
+offset_bottom = 590.0
+text = "메인 메뉴로"

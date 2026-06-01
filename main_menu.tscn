@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://d2l7qor4tap5"]
+
+[ext_resource type="Script" uid="uid://bijcou4f2lvff" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://lwcelbu3rmmg" path="res://image soccer/Environment/Main1.png" id="2_7vrkn"]
+
+[node name="MainMenu" type="Control" unique_id=579764011]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_06t4h")
+
+[node name="Background" type="TextureRect" parent="." unique_id=497064200]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_7vrkn")
+
+[node name="TitleLabel" type="Label" parent="." unique_id=440439940]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 100.0
+offset_right = 465.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 64
+text = "Mini Soccer"
+
+[node name="StartButton" type="Button" parent="." unique_id=1963311297]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 373.0
+offset_right = 677.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="HowToPlayButton" type="Button" parent="." unique_id=1888488482]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 466.0
+offset_right = 678.0
+offset_bottom = 523.0
+theme_override_font_sizes/font_size = 32
+text = "description"
+
+[node name="HowToPlayPanel" type="Panel" parent="." unique_id=1327135353]
+visible = false
+layout_mode = 0
+offset_left = 300.0
+offset_top = 150.0
+offset_right = 800.0
+offset_bottom = 500.0
+
+[node name="HowToPlayLabel" type="Label" parent="HowToPlayPanel" unique_id=822169147]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 179.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+text = "게임 방법
+
+방향키 - 이동
+위 방향키 - 점프
+아래 방향키 - 슬라이드
+D 버튼 - 슛
+(길게 누를수록 강하게!)"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="HowToPlayPanel" unique_id=1219536720]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 312.0
+offset_right = 479.0
+offset_bottom = 343.0
+text = "닫기"
+
+[node name="CharacterSelectPanel" type="Panel" parent="." unique_id=1037205748]
+visible = false
+layout_mode = 0
+offset_left = 76.0
+offset_top = 40.0
+offset_right = 1076.0
+offset_bottom = 610.0
+
+[node name="SelectTitle" type="Label" parent="CharacterSelectPanel" unique_id=139187418]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Card1" type="Button" parent="CharacterSelectPanel" unique_id=248690630]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 80.0
+offset_right = 245.0
+offset_bottom = 290.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card1" unique_id=667046697]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card1" unique_id=1517177974]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="Card2" type="Button" parent="CharacterSelectPanel" unique_id=1654156436]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 80.0
+offset_right = 480.0
+offset_bottom = 290.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card2" unique_id=110693483]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card2" unique_id=482914006]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="Card3" type="Button" parent="CharacterSelectPanel" unique_id=464627126]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 80.0
+offset_right = 715.0
+offset_bottom = 290.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card3" unique_id=355850197]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card3" unique_id=1067272927]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="Card4" type="Button" parent="CharacterSelectPanel" unique_id=469672584]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 80.0
+offset_right = 950.0
+offset_bottom = 290.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card4" unique_id=1756648662]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card4" unique_id=711254066]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="Card5" type="Button" parent="CharacterSelectPanel" unique_id=646874649]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 325.0
+offset_right = 245.0
+offset_bottom = 535.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card5" unique_id=378509720]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card5" unique_id=529591846]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="Card6" type="Button" parent="CharacterSelectPanel" unique_id=1144562988]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 325.0
+offset_right = 480.0
+offset_bottom = 535.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card6" unique_id=1137632490]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card6" unique_id=715427394]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="Card7" type="Button" parent="CharacterSelectPanel" unique_id=2108752922]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 325.0
+offset_right = 715.0
+offset_bottom = 535.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card7" unique_id=1719226019]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card7" unique_id=1907026708]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="Card8" type="Button" parent="CharacterSelectPanel" unique_id=685199545]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 325.0
+offset_right = 950.0
+offset_bottom = 535.0
+
+[node name="Preview" type="Sprite2D" parent="CharacterSelectPanel/Card8" unique_id=1518456132]
+position = Vector2(95, 80)
+scale = Vector2(0.12, 0.12)
+
+[node name="NameLabel" type="Label" parent="CharacterSelectPanel/Card8" unique_id=952892892]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 190.0
+offset_bottom = 190.0
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="CharacterSelectPanel" unique_id=1583329145]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 533.0
+offset_right = 550.0
+offset_bottom = 564.0
+text = "닫기"

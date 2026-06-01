@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://daut3vpk5qlj8"]
+
+[ext_resource type="Script" uid="uid://c116j7kx8h66m" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://bsquqvvgx3smw" path="res://image soccer/Environment/goalpost.png" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dmj8nbh437wlt" path="res://ball.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://sfmx5ekw4vh0" path="res://player.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://r3trj35skcr1" path="res://pause_menu.gd" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bdntct4t851q4" path="res://ai.tscn" id="5_lquwl"]
+[ext_resource type="AudioStream" uid="uid://b2tere5sva3ba" path="res://image soccer/sound/ball sound.mp3" id="7_5vw27"]
+[ext_resource type="AudioStream" uid="uid://d3seo0bn815p4" path="res://image soccer/sound/경기장 사운드.mp3" id="8_kek77"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7mycd"]
+distance = -50.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(6.5, 256.53125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(182.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
+size = Vector2(1, 527)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(15, 272.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(2, 516.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kek77"]
+size = Vector2(1150, 4.5)
+
+[node name="Main" type="Node2D" unique_id=266004424]
+script = ExtResource("1_h2yge")
+ball_scene = ExtResource("3_lquwl")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1925088958]
+position = Vector2(576, 324.99997)
+scale = Vector2(0.6103137, 0.7727272)
+texture = ExtResource("2_1bvp3")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1943691959]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=955107765]
+position = Vector2(572, 391)
+shape = SubResource("WorldBoundaryShape2D_7mycd")
+
+[node name="LeftGoalPost" type="Area2D" parent="." unique_id=1016634187]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoalPost" unique_id=84143329]
+position = Vector2(121.5, 315.53125)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="RightGoalPost" type="Area2D" parent="." unique_id=868290596]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RightGoalPost" unique_id=1831419110]
+position = Vector2(1031.25, 317.26563)
+shape = SubResource("RectangleShape2D_272bh")
+
+[node name="Ball" parent="." unique_id=97994272 instance=ExtResource("3_lquwl")]
+position = Vector2(572, 400)
+
+[node name="Timer" type="Timer" parent="." unique_id=1523852859]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=291879857]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1727786124]
+offset_left = 529.0
+offset_top = 61.0
+offset_right = 622.0
+offset_bottom = 128.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "0 : 0"
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer" unique_id=1941883196]
+offset_right = 1152.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+
+[node name="PauseMenu" type="Panel" parent="CanvasLayer" unique_id=1966352436]
+process_mode = 2
+visible = false
+offset_left = 376.0
+offset_top = 170.0
+offset_right = 776.0
+offset_bottom = 470.0
+script = ExtResource("4_7mycd")
+
+[node name="TitleLabel" type="Label" parent="CanvasLayer/PauseMenu" unique_id=171158534]
+layout_mode = 0
+offset_top = 30.0
+offset_right = 400.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 42
+text = "일시정지"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/PauseMenu" unique_id=335998530]
+process_mode = 2
+layout_mode = 0
+offset_left = 100.0
+offset_top = 120.0
+offset_right = 300.0
+offset_bottom = 170.0
+text = "계속하기"
+
+[node name="MainMenuButton" type="Button" parent="CanvasLayer/PauseMenu" unique_id=1968183515]
+process_mode = 2
+layout_mode = 0
+offset_left = 100.0
+offset_top = 190.0
+offset_right = 300.0
+offset_bottom = 240.0
+text = "메인 메뉴로"
+
+[node name="Player" parent="." unique_id=90677682 instance=ExtResource("4_1bvp3")]
+position = Vector2(437, 378)
+
+[node name="PowerBar" type="ProgressBar" parent="Player" unique_id=1252512753]
+offset_left = -36.0
+offset_top = -86.0
+offset_right = 34.0
+offset_bottom = -59.0
+max_value = 1500.0
+
+[node name="LeftGoal" type="Node" parent="." unique_id=1451768352]
+
+[node name="LeftGoalTop" type="StaticBody2D" parent="LeftGoal" unique_id=1944612652]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal/LeftGoalTop" unique_id=1506358896]
+position = Vector2(91.25, 180)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="LeftGoalBack" type="StaticBody2D" parent="LeftGoal" unique_id=1416978472]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal/LeftGoalBack" unique_id=1861701515]
+position = Vector2(1.5, 266.5)
+shape = SubResource("RectangleShape2D_lquwl")
+
+[node name="LeftGoalBack2" type="StaticBody2D" parent="LeftGoal" unique_id=1933570466]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal/LeftGoalBack2" unique_id=1014017113]
+position = Vector2(75, 322)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="RightGoal" type="Node" parent="." unique_id=490566439]
+
+[node name="RightGoalTop" type="StaticBody2D" parent="RightGoal" unique_id=566702406]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal/RightGoalTop" unique_id=1287663970]
+position = Vector2(1060, 180)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="RightGoalBack" type="StaticBody2D" parent="RightGoal" unique_id=2008207633]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal/RightGoalBack" unique_id=578232915]
+position = Vector2(1150, 260.75)
+shape = SubResource("RectangleShape2D_5vw27")
+
+[node name="RightGoalBack2" type="StaticBody2D" parent="RightGoal" unique_id=1305401423]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal/RightGoalBack2" unique_id=1136530983]
+position = Vector2(1076, 324)
+shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Ceoiling" type="StaticBody2D" parent="." unique_id=1231252095]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceoiling" unique_id=521135169]
+position = Vector2(576, -0.75)
+shape = SubResource("RectangleShape2D_kek77")
+
+[node name="Player2" parent="." unique_id=1450896643 instance=ExtResource("5_lquwl")]
+position = Vector2(734, 378)
+
+[node name="BallSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=277736570]
+stream = ExtResource("7_5vw27")
+volume_db = -10.0
+
+[node name="StadiumSoundPlayer" type="AudioStreamPlayer" parent="." unique_id=312087210]
+stream = ExtResource("8_kek77")
+volume_db = -20.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

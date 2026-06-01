@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bdntct4t851q4"]
+
+[ext_resource type="Script" uid="uid://c1g60lwm611bc" path="res://ai.gd" id="1_0e438"]
+[ext_resource type="Texture2D" uid="uid://dte5vlb6qcwd1" path="res://image soccer/player/walk_Son.png" id="2_0e438"]
+[ext_resource type="Texture2D" uid="uid://diprwhqw0544d" path="res://image soccer/player/jump_Son.png" id="3_w7t4q"]
+[ext_resource type="Texture2D" uid="uid://dgblue4s4f3fy" path="res://image soccer/player/run_Son.png" id="4_kb3ju"]
+[ext_resource type="Texture2D" uid="uid://brv6cq2ysmri7" path="res://image soccer/player/shoot_Son.png" id="5_a5s6k"]
+[ext_resource type="Texture2D" uid="uid://vt2cj2d35you" path="res://image soccer/player/slide_Son.png" id="6_umfpg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n7ghd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0e438")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_w7t4q")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kb3ju")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a5s6k")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_umfpg")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nvl01"]
+radius = 30.0
+height = 104.0
+
+[node name="AI" type="CharacterBody2D" unique_id=90677682]
+collision_mask = 3
+script = ExtResource("1_0e438")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1255391133]
+scale = Vector2(0.28, 0.28)
+sprite_frames = SubResource("SpriteFrames_n7ghd")
+animation = &"slide"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=145610901]
+shape = SubResource("CapsuleShape2D_nvl01")

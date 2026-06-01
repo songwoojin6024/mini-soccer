@@ -1,0 +1,50 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b2tu1raqj65om"]
+
+[ext_resource type="Texture2D" uid="uid://c125iiekccsww" path="res://image soccer/player/walk_h.png" id="1_2lgk4"]
+[ext_resource type="Texture2D" uid="uid://c1im0e4u0vg6y" path="res://image soccer/player/jump_h.png" id="2_xhmwj"]
+[ext_resource type="Texture2D" uid="uid://x1r72bnfd4jp" path="res://image soccer/player/run_h.png" id="3_e4f6n"]
+[ext_resource type="Texture2D" uid="uid://muyllpgmxrb2" path="res://image soccer/player/shoot_h.png" id="4_p7goe"]
+[ext_resource type="Texture2D" uid="uid://dfwrxjiyu33kc" path="res://image soccer/player/slide_h.png" id="5_gstrw"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2lgk4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xhmwj")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e4f6n")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p7goe")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gstrw")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}]
